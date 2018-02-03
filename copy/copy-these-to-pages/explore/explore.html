@@ -1,0 +1,37 @@
+<ion-content>
+  <div class="loading" *ngIf="loading">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+      <img [src]="user.image" *ngIf="user">
+    </div>
+    <div class="label">Finding people near you...</div>
+  </div>
+  <div swing-stack #swingstack [stackConfig]="stackConfig" (throwoutleft)="dislike()" (throwoutright)="like()" (throwoutup)="superLike()" class="card-stack">
+    <div class="person-card" #swingcards swing-card *ngFor="let person of people" [id]="person.username + '-card'" (click)="goToProfilePage(person)">
+      <img [src]="person.image">
+      <div class="filter"></div>
+      <div class="like label">like</div>
+      <div class="dislike label">nope</div>
+      <div class="super-like label">super<br />like</div>
+      <div class="name">{{person.name}}, {{person.age}}</div>
+    </div>
+  </div>
+  <div class="buttons" *ngIf="!loading">
+    <div class="button-container">
+      <button ion-button icon-only round class="dislike" (click)="dislike(true)" id="dislike-button">
+        <ion-icon name="md-close"></ion-icon>
+      </button>
+    </div>
+    <div class="button-container">
+      <button ion-button icon-only round class="super-like" (click)="superLike(true)" id="super-like-button">
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </div>
+    <div class="button-container">
+      <button ion-button icon-only round class="like" (click)="like(true)" id="like-button">
+        <ion-icon name="heart"></ion-icon>
+      </button>
+    </div>
+  </div>
+</ion-content>

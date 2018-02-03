@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="account-container">
+    <div class="account" *ngIf="user">
+      <img [src]="user.image">
+      <div class="name">{{user.name}}, {{user.age}}</div>
+      <div class="label">{{user.location}}</div>
+    </div>
+    <div class="buttons">
+      <div class="settings-container button">
+        <button ion-button icon-only round color="background" (click)="goToSettingsPage()">
+          <ion-icon name="ios-settings" color="dim"></ion-icon>
+        </button>
+        <div class="label">settings</div>
+      </div>
+      <div class="edit-profile-container button">
+        <button ion-button icon-only round color="background" (click)="goToEditAccountPage()">
+          <ion-icon name="md-create" color="dim"></ion-icon>
+        </button>
+        <div class="label">edit info</div>
+      </div>
+    </div>
+  </div>
+  <div class="title">
+    <div class="sub-title">
+      NOT
+    </div>
+    <div class="main-title">
+      Tinder
+    </div>
+  </div>
+</ion-content>

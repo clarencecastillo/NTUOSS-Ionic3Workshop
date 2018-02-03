@@ -1,0 +1,85 @@
+page-account {
+
+  ion-content {
+    background-color: color($colors, background) !important;
+
+    div.scroll-content {
+      display: flex;
+      flex-direction: column;
+      overflow-y: hidden;
+    }
+
+    div.account-container {
+      flex-grow: 1;
+      width: 100%;
+      background-color: white;
+      border-radius: 0 0 120% 120%/ 0 0 23rem 23rem;
+      border-bottom: color($colors, light) 2px solid;
+
+      div.account {
+        padding: 24px;
+        text-align: center;
+
+        img {
+          border-radius: 50%;
+          height: 38vmin;
+          width: 38vmin;
+          border-bottom: 6px solid color($colors, light);
+        }
+
+        div.label {
+          font-size: 14px;
+        }
+
+        div.name {
+          font-weight: bold;
+          font-size: 22px;
+        }
+      }
+
+      div.buttons {
+        display: flex;
+        padding: 4vmin 24px;
+
+        div.button {
+          flex-grow: 1;
+
+          button {
+            width: 6rem;
+            height: 6rem;
+            border-bottom: color($colors, light) 2px solid;
+          }
+
+          div.label {
+            color: color($colors, dim);
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 6px;
+            font-size: 12px;
+          }
+        }
+
+        div.button:last-of-type {
+          border-left: 1px solid color($colors, dim);
+        }
+      }
+    }
+
+    div.title {
+      padding: 16vmin 0;
+      display: block;
+      font-family: "Chalet";
+      margin: auto;
+
+      div.sub-title {
+        color: color($colors, secondary);
+        font-size: 1.2rem;
+      }
+
+      div.main-title {
+        font-size: 6rem;
+        color: color($colors, primary);
+      }
+    }
+  }
+}

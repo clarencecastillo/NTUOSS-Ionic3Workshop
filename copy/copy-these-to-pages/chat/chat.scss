@@ -1,0 +1,123 @@
+page-chat {
+
+  ion-header {
+    ion-title {
+
+      div.toolbar-title {
+        overflow: visible;
+
+        div.title {
+          display: inline-flex;
+          line-height: 42px;
+          text-transform: capitalize;
+
+          img {
+            margin-top: 4px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+  }
+
+  ion-content {
+
+    div.scroll-content {
+      display: flex;
+      flex-direction: column;
+
+      ion-list {
+        flex-grow: 1;
+        overflow-y: scroll;
+        margin-bottom: 0;
+
+        div.chat-bubble {
+          color: color($colors, dark);
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          margin: 24px 0;
+
+          div.message {
+            display: block;
+            padding: 14px;
+            max-width: 70%;
+            margin: 0 24px;
+            border-radius: 6px;
+            position: relative;
+
+            div.tail {
+              position: absolute;
+              bottom: 0;
+              width: 12px;
+              height: 12px;
+            }
+          }
+
+          &.sent {
+            align-items: flex-end;
+
+            div.message {
+              background-color: color($colors, secondary);
+              color: white;
+
+              div.tail {
+                right: -8px;
+                width: 0;
+                height: 0;
+                border-top: 16px solid transparent;
+                border-bottom: 0px solid transparent;
+                border-left: 16px solid color($colors, secondary);
+              }
+            }
+          }
+
+          &.received {
+
+            div.message {
+              background-color: color($colors, light);
+
+              div.tail {
+                left: -8px;
+                width: 0;
+                height: 0;
+                border-top: 16px solid transparent;
+                border-bottom: 0px solid transparent;
+                border-right: 16px solid color($colors, light);
+              }
+            }
+
+          }
+        }
+      }
+
+      form {
+        ion-item {
+          background: color($colors, light);
+          div.item-inner {
+            border-bottom: none !important;
+            box-shadow: none !important;
+
+            ion-input {
+              background-color: white;
+              border-radius: 6px;
+              margin: 6px 0;
+              padding: 0 6px;
+            }
+          }
+
+          button {
+            text-transform: capitalize;
+            color: color($colors, dark);
+            margin: 0px !important;
+            padding: 12px !important;
+            height: 44px !important;
+          }
+        }
+      }
+    }
+  }
+}

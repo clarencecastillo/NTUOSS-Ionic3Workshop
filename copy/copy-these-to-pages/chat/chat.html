@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="match">
+      <div class="title">
+        <img [src]="match.person.image">
+        {{match.person.name}}
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ <ion-list *ngIf="match && user" id="message-list">
+   <div class="chat-bubble" *ngFor="let message of match.chat" [ngClass]="message.from.username == user.username ? 'sent' : 'received'">
+     <div class="message">
+       {{message.message}}
+       <div class="tail"></div>
+     </div>
+   </div>
+ </ion-list>
+ <form [formGroup]="chatForm">
+   <ion-item>
+     <ion-input type="text" formControlName="message" placeholder="Message" autocorrect="off" autocapitalize="none" (ionFocus)="onMessageInputFocus()"></ion-input>
+     <button ion-button item-right clear [disabled]="!chatForm.valid" (click)="sendMessage()">Send</button>
+   </ion-item>
+ </form>
+</ion-content>

@@ -1,0 +1,77 @@
+page-match {
+
+  ion-content {
+    background-color: rgba(black, 0.8) !important;
+
+    div.scroll-content {
+      display: flex;
+      flex-direction: column;
+
+      div.header {
+        font-size: 6.4rem;
+        text-align: center;
+        color: white;
+        padding-top: 12vmin;
+        font-weight: bold;
+        font-family: "Hipster Script Pro";
+        white-space: nowrap;
+
+      }
+
+      div.sub-header {
+        font-size: 1.8rem;
+        text-align: center;
+        color: color($colors, light);
+        padding-bottom: 8vmin;
+
+        p.name {
+          display: inline;
+          text-transform: capitalize;
+        }
+      }
+
+      div.images {
+        display: flex;
+        flex-grow: 1;
+        padding-top: 4vmin;
+
+        div.person {
+          flex-grow: 1;
+          text-align: center;
+
+          img {
+            height: 38vmin;
+            width: 38vmin;
+            border-radius: 50%;
+            border: 4px solid color($colors, light);
+          }
+        }
+      }
+
+      div.buttons {
+        button {
+          background: -webkit-linear-gradient(to left, color($colors, secondary), color($colors, tertiary));
+          background: linear-gradient(to left, color($colors, secondary), color($colors, tertiary));
+          text-transform: uppercase;
+          margin: 2vmin 0;
+          font-weight: 400;
+          padding: 28px 0;
+
+          &.cancel {
+            background: transparent !important;
+            border: 2px solid color($colors, primary);
+          }
+
+          &.share {
+            background: transparent !important;
+            color: white;
+
+            ion-icon {
+              padding-right: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

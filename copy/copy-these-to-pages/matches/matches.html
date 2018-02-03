@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-list-header *ngIf="matches.length > 0">New Matches</ion-list-header>
+  <div class="new-matches" *ngIf="matches.length > 0">
+    <div class="new-match" *ngFor="let match of getNewMatches()" (click)="goToChatPage(match.id)">
+      <img [src]="match.person.image">
+      <div class="name">{{match.person.name}}</div>
+    </div>
+  </div>
+  <ion-list-header *ngIf="matches.length > 0">
+    Messages
+  </ion-list-header>
+  <ion-list class="matches" *ngIf="matches.length > 0">
+    <ion-item *ngFor="let match of matches" (click)="goToChatPage(match.id)">
+      <ion-avatar item-start>
+        <img [src]="match.person.image">
+      </ion-avatar>
+      <h2>{{match.person.name}}</h2>
+      <p *ngIf="match.chat[match.chat.length - 1]">{{match.chat[match.chat.length - 1].message}}</p>
+      <p *ngIf="match.chat[match.chat.length - 1] == undefined">Say hi to {{match.person.name}}!</p>
+    </ion-item>
+  </ion-list>
+  <div class="placeholder" *ngIf="matches.length == 0">
+    <ion-icon name="md-albums">
+      <p>like</p>
+    </ion-icon>
+    <div class="title">Get Swiping</div>
+    <div class="sub-title">When you match with other users they'll appear here where you can send them a message</div>
+  </div>
+</ion-content>

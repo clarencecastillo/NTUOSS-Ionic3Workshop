@@ -1,0 +1,47 @@
+page-settings {
+
+  ion-header {
+    button.back-button {
+      color: color($colors, primary);
+    }
+  }
+
+  ion-content {
+    background-color: color($colors, background) !important;
+
+    div.setting-card {
+      padding: 24px;
+      margin: 18px;
+      background-color: white;
+      border-radius: 6px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+      div.header {
+        color: color($colors, primary);
+        font-size: 1.6rem;
+
+        div.sub-header {
+          display: block;
+          float: right;
+          color: color($colors, dark);
+        }
+      }
+
+      ion-item,
+      ion-item > div.item-inner {
+        padding: 0 !important;
+        border-bottom: none !important;
+      }
+    }
+
+    button.logout {
+      margin: 18px;
+      width: calc(100% - 36px);
+      background-color: white;
+      text-transform: capitalize;
+      color: color($colors, dark);
+      padding: 28px 0;
+      border-radius: 6px;
+    }
+  }
+}

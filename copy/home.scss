@@ -1,0 +1,60 @@
+page-home {
+
+  div.scroll-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    div.title {
+      display: block;
+      padding-top: 12rem;
+      font-family: "Chalet";
+
+      div.sub-title {
+        color: color($colors, secondary);
+        font-size: 1.2rem;
+      }
+
+      div.main-title {
+        font-size: 6rem;
+        color: color($colors, primary);
+      }
+    }
+
+    div.logo {
+      width: 100%;
+      flex-grow: 1;
+      display: flex;
+
+      div.icon-wrapper {
+        background: -webkit-linear-gradient(to bottom, color($colors, secondary), color($colors, tertiary));
+        background: linear-gradient(to bottom, color($colors, secondary), color($colors, tertiary));
+        width: 22rem;
+        height: 22rem;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 50%;
+        margin: auto;
+
+        ion-icon {
+          width: 100%;
+          text-align: center;
+          color: white;
+          font-size: 16rem;
+          line-height: 20rem;
+        }
+      }
+    }
+
+    div.login {
+      width: 100%;
+      padding: 6rem;
+
+      button {
+        background: -webkit-linear-gradient(to left, color($colors, secondary), color($colors, tertiary));
+        background: linear-gradient(to left, color($colors, secondary), color($colors, tertiary));
+        padding: 28px 0;
+      }
+    }
+  }
+}

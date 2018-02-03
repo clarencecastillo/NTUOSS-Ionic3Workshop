@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="settingsForm">
+    <div class="setting-card">
+      <div class="header">
+        Show Me
+        <div class="sub-header">
+          {{settingsForm.controls['showMen'].value ? 'Men' : ''}}{{settingsForm.controls['showWomen'].value ? ' Women' : ''}}
+        </div>
+      </div>
+      <ion-item>
+        <ion-label>Men</ion-label>
+        <ion-toggle checked="false" formControlName="showMen" (ionChange)="onGenderToggleChange('showMen')"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Women</ion-label>
+        <ion-toggle checked="false" formControlName="showWomen" (ionChange)="onGenderToggleChange('showWomen')"></ion-toggle>
+      </ion-item>
+    </div>
+    <div class="setting-card">
+      <div class="header">
+        Maximum Distance
+        <div class="sub-header">
+          {{settingsForm.controls['maxDistance'].value}}km
+        </div>
+      </div>
+      <ion-item>
+        <ion-range min="2" max="161" color="primary" formControlName="maxDistance"></ion-range>
+      </ion-item>
+    </div>
+    <div class="setting-card">
+      <div class="header">
+        Age Range
+        <div class="sub-header">
+          {{age.lower < 55 ? age.lower + ' - ' : ''}}{{age.upper}}{{age.upper == 55 ? '+' : ''}}
+        </div>
+      </div>
+      <ion-item>
+        <ion-range min="18" max="55" color="primary" dualKnobs="true" [(ngModel)]="age" [ngModelOptions]="{standalone: true}"></ion-range>
+      </ion-item>
+    </div>
+    <button ion-button class="logout" color="light" (click)="logout()">Logout</button>
+  </form>
+</ion-content>

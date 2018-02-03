@@ -1,0 +1,49 @@
+page-edit-account {
+
+  ion-header {
+    button.back-button {
+      color: color($colors, primary);
+    }
+  }
+
+  div.scroll-content {
+    display: flex;
+    flex-direction: column;
+
+    div.image-container {
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+
+      button {
+        width: 16vmin;
+        height: 16vmin;
+        position: absolute;
+        bottom: -8vmin;
+        right: 8%;
+        font-size: 2.2rem;
+        background: -webkit-linear-gradient(to bottom, color($colors, secondary), color($colors, tertiary));
+        background: linear-gradient(to bottom, color($colors, secondary), color($colors, tertiary));
+      }
+    }
+
+    .section {
+      padding: 24px;
+
+      &.profile-info {
+        border-bottom: 1px solid color($colors, light);
+
+        div.name {
+          font-size: 3.6rem;
+          text-transform: capitalize;
+        }
+      }
+
+      &.description {
+        margin-bottom: 24%;
+      }
+    }
+  }
+}

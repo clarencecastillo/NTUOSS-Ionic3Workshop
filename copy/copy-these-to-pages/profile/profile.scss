@@ -1,0 +1,83 @@
+page-profile {
+  div.scroll-content {
+    display: flex;
+    flex-direction: column;
+
+    div.image-container {
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+
+      button {
+        width: 16vmin;
+        height: 16vmin;
+        position: absolute;
+        bottom: -8vmin;
+        right: 8%;
+        font-size: 2.8rem;
+        background: -webkit-linear-gradient(to bottom, color($colors, secondary), color($colors, tertiary));
+        background: linear-gradient(to bottom, color($colors, secondary), color($colors, tertiary));
+      }
+    }
+
+    div.section {
+      padding: 24px;
+
+      &.profile-info {
+        border-bottom: 1px solid color($colors, light);
+
+        div.name {
+          font-size: 3.6rem;
+          text-transform: capitalize;
+        }
+      }
+
+      &.description {
+        margin-bottom: 24%;
+      }
+    }
+
+    div.buttons {
+      display: flex;
+      align-items: center;
+      z-index: 1;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 0 calc(12px + 4rem);
+      height: 20%;
+      background: -webkit-linear-gradient(to top, white, rgba(white, 0.8), transparent);
+      background: linear-gradient(to top, white, rgba(white, 0.8), transparent);
+
+      div.button-container {
+        margin: 12px;
+        width: 8rem;
+        text-align: center;
+
+        button {
+          background-color: white;
+          font-size: 2.4rem;
+          padding: 0px;
+          width: 8rem;
+          height: 8rem;
+
+          &.like {
+            color: #62eac7;
+          }
+
+          &.dislike {
+            color: #ed496b;
+          }
+
+          &.super-like {
+            color: #59bbfd;
+            width: 6rem;
+            height: 6rem;
+          }
+        }
+      }
+    }
+  }
+}

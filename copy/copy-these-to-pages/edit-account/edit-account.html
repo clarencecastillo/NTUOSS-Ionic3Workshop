@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="user">
+  <div class="image-container">
+    <img [src]="user.image">
+    <button ion-button icon-only round color="background" (click)="randomise()">
+      <ion-icon name="md-repeat" color="light"></ion-icon>
+    </button>
+  </div>
+  <div class="section profile-info">
+    <div class="name">{{user.name}}, {{user.age}}</div>
+  </div>
+  <form [formGroup]="editAccountForm">
+    <ion-textarea formControlName="description" class="section description" placeholder="About You"></ion-textarea>
+  </form>
+</ion-content>

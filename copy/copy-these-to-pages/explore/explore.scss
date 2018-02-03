@@ -1,0 +1,189 @@
+page-explore {
+
+  div.scroll-content {
+    display: flex;
+    flex-direction: column;
+    background-color: color($colors, background) !important;
+
+    div.loading {
+      position: relative;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      div.spinner {
+        width: 78vmin;
+        height: 78vmin;
+        margin: auto;
+        position: relative;
+
+        .double-bounce1, .double-bounce2 {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background-color: rgba(color($colors, primary), 0.3);
+          opacity: 0.6;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border: 3px solid color($colors, primary);
+
+          -webkit-animation: sk-bounce 1.4s infinite ease-in-out;
+          animation: sk-bounce 1.4s infinite ease-in-out;
+        }
+
+        .double-bounce2 {
+          -webkit-animation-delay: -0.7s;
+          animation-delay: -0.7s;
+        }
+
+        @-webkit-keyframes sk-bounce {
+          0%, 100% { -webkit-transform: scale(0.0) }
+          50% { -webkit-transform: scale(1.0) }
+        }
+
+        @keyframes sk-bounce {
+          0%, 100% {
+            transform: scale(0.5);
+            -webkit-transform: scale(0.5);
+            opacity: 0.5;
+          } 50% {
+            transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+            opacity: 0;
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          height: 28vmin;
+          width: 28vmin;
+        }
+      }
+
+      div.label {
+        text-align: center;
+        font-size: 2.2rem;
+        color: color($colors, dim);
+      }
+
+
+    }
+
+    div.card-stack {
+      position: relative;
+      flex-grow: 1;
+      padding: 6px;
+      z-index: 1;
+
+      div.person-card {
+        border-radius: 12px;
+        position: absolute;
+        height: calc(100% - 12px);
+        width: calc(100% - 12px);
+        overflow: hidden;
+        box-shadow: 1px 6px 5px rgba(color($colors, dark), 0.2);
+
+        div.label {
+          position: absolute;
+          font-size: 3.2rem;
+          border: 2px solid;
+          font-weight: bolder;
+          padding: 12px;
+          text-transform: uppercase;
+          text-align: center;
+          border-radius: 6px;
+          letter-spacing: 6px;
+          transition: opacity linear;
+          opacity: 0;
+
+          &.like {
+            top: 12%;
+            left: 8%;
+            color: #62eac7;
+            transform: rotate(-14deg);
+          }
+
+          &.dislike {
+            top: 12%;
+            right: 8%;
+            color: #ed496b;
+            transform: rotate(14deg);
+          }
+
+          &.super-like {
+            bottom: 24%;
+            color: #59bbfd;
+            left: 50%;
+            transform: rotate(-14deg) translateX(-50%);
+            line-height: 3rem;
+          }
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+
+        div.filter {
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          background: -webkit-linear-gradient(to bottom, rgba(black, 0.0), rgba(black, 0.1), rgba(black, 0.9));
+          background: linear-gradient(to bottom, rgba(black, 0.0), rgba(black, 0.1), rgba(black, 0.9));
+        }
+
+        div.name {
+          position: absolute;
+          bottom: 0;
+          color: white;
+          padding: 22px 28px;
+          font-size: 2.4rem;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    div.buttons {
+      display: flex;
+      align-items: center;
+      margin: auto;
+      z-index: 1;
+
+      div.button-container {
+        margin: 12px;
+        width: 8rem;
+        text-align: center;
+
+        button {
+          background-color: white;
+          font-size: 2.4rem;
+          padding: 0px;
+          width: 8rem;
+          height: 8rem;
+
+          &.like {
+            color: #62eac7;
+          }
+
+          &.dislike {
+            color: #ed496b;
+          }
+
+          &.super-like {
+            color: #59bbfd;
+            width: 6rem;
+            height: 6rem;
+          }
+        }
+      }
+    }
+  }
+}

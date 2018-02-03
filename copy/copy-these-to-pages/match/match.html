@@ -1,0 +1,24 @@
+<ion-content padding>
+  <div class="header">
+    It's a Match!
+  </div>
+  <div class="sub-header">
+    You and <p class="name">{{person.name}}</p> have liked each other.
+  </div>
+  <div class="images">
+    <div class="person">
+      <img [src]="user.image" *ngIf="user">
+    </div>
+    <div class="person">
+      <img [src]="person.image">
+    </div>
+  </div>
+  <div class="buttons">
+    <button ion-button block round (click)="goToChatPage()">send a message</button>
+    <button ion-button block round class="cancel" (click)="dismiss()">keep swiping</button>
+    <button ion-button block clear class="share" (click)="share()">
+      <ion-icon name="md-share"></ion-icon>
+      Tell your friends
+    </button>
+  </div>
+</ion-content>
