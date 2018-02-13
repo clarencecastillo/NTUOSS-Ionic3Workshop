@@ -54,7 +54,7 @@ It is important to note that Angular is not an MVC framework, but rather a compo
 
 #### TypeScript
 
-TypeScript is an open source strictly typed superset of JavaScript that compiles to plain JavaScript. Simply put, it is not any different to the same old JavaScript we're used to, but with OOP support, strong static typing and compile-time error checking through compilation. This should be easy for you to pickup if you're familiar with Java and/or JavaScript.
+TypeScript is an open source strictly typed superset of JavaScript that compiles to plain JavaScript. Simply put, it is not any different to the same old JavaScript we're used to, but with OOP support, strong static typing and compile-time error checking through compilation. This should be easy for you to pick-up if you're familiar with Java and/or JavaScript.
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### 1.1 Creating a Project
 
-As with most frameworks out there, the first step is always to bootstrap our project using the ready-to-go boilerplates that's available for us to use. For our fake tinder app, we'll use the `tabs` boilerplate to get things started. Go ahead and run the code below:
+As with most frameworks out there, the first step is always to bootstrap our project using the ready-to-go boilerplates that's available for us to use. For our fake tinder app, we'll use the `tabs` boilerplate to get things started.
 
 ```bash
 $ ionic start not-tinder tabs
@@ -99,7 +99,7 @@ If it asks if you want to integrate Cordova into our app, just hit `N` (for No) 
 
 #### 1.2 Running Locally
 
-Now that our project's ready, go ahead and `cd` into `not-tinder` and run the `serve` command. This should automatically open Google Chrome for us which is set to automatically refresh whenever you make changes to your app code.
+Now that our project's ready, `cd` into `not-tinder` and run the `serve` command. This should automatically open Google Chrome for us which is set to automatically refresh whenever you make changes to your app code.
 
 ```bash
 $ cd ./not-tinder
@@ -161,7 +161,7 @@ Traditionally, developers manually push data values into the HTML controls to re
 ```
 
 ```js
-// vanila javascript
+// vanilla javascript
 function myFunction() {
   document.getElementById("content").innerHTML = "Hello World";
 }
@@ -215,7 +215,7 @@ myFunction() {
 }
 ```
 
-Now that I've convinved you (I hope), let's try changing the content of our `home` component to `Hello Ionic`. Go ahead and open `./src/pages/home/home.html` and change the content of the `<h2>` tag to `{{text}}`. Note the `{{text}}` syntax is an *interpolation* that displays the component's `text` property value within the `<h2>` element.
+Now that I've convinved you (I hope), let's try changing the content of our `home` component to `Hello Ionic`. Open `./src/pages/home/home.html` and change the content of the `<h2>` tag to `{{text}}`. Note the `{{text}}` syntax is an *interpolation* that displays the component's `text` property value within the `<h2>` element.
 
 
 ```html
@@ -258,7 +258,7 @@ As mentioned earlier, TypeScript is strongly typed so it is possible (though not
 ## Task 2 - Dependencies
 ___
 
-Moving on to the next step, we'll be setting up the dependencies and perform all the preparation we need for our app. From this section onwards, I will be discussing feature-specific concepts as we go along the development of the app so you get to follow exactly how to implement them. For now, go ahead and kill your server using `Ctrl+C`.
+Moving on to the next step, we'll be setting up the dependencies and perform all the preparation we need for our app. From this section onwards, I will be discussing feature-specific concepts as we go along the development of the app so you get to follow exactly how to implement them. For now, kill your server using `Ctrl+C` because we won't be needing in awhile.
 
 #### 2.1 Color Themes
 
@@ -378,7 +378,7 @@ export class AppModule {}
 
 #### 3.2 Asynchronous Programming
 
-When dealing with UI or any application that interfaces with a server, it is almost inevitable that some parts of your code have to be written in an asynchronous fashion. Obviously you don't want your app to *hang* while it waits for an external resource and so in this endeavour, Angular utilises RxJS's `Observable` module to work with asynchronous data streams.
+When dealing with UI or any application that interfaces with an external resource, it is almost inevitable that some parts of your code have to be written in an asynchronous fashion. Obviously you don't want your app to *hang* while it waits a resource it has no control, and so in this endeavour, Angular utilises RxJS's `Observable` module to work with asynchronous data streams.
 
 To illustrate, let's take a closer look at the `getRandomPeople()` method inside the newly added `ApiProvider`. Note that this entire function returns an `Observable` which expects a stream of `Person[]` data as indicated by the return type in the signature.
 
@@ -411,7 +411,7 @@ getRandomPeople(count:number = 1, gender?: string): Observable<Person[]> {
 }
 ```
 
-Whenever we call this this method, an `http` request is fired asynchronously so you're free to do other things while the request is doing its job. Here's how a call to this function would typically look like from inside a component class.
+Whenever we call this method, an `http` request is fired asynchronously so you're free to do other things while the request is doing its job. Here's how a call to this function would typically look like from inside a component class.
 
 ```ts
 people: Person[];
@@ -481,7 +481,7 @@ export class TabsPage {
 }
 ```
 
-Since the boilerplate did not come with a stylesheet for us to style `TabsPage`, go ahead and create a file `tabs.scss` in the `src/pages/tabs` directory. Paste the following code as the content of the new file you just created. Observe that all *sass* files linked with a specific component always have that component's selector as the top-level container.
+Since the boilerplate did not come with a stylesheet for us to style `TabsPage`, we need to create the file `tabs.scss` in the `src/pages/tabs` directory. Paste the following code as the content of the new file you just created. Observe that all *sass* files linked with a specific component always have that component's selector as the top-level container.
 
 ```scss
 page-tabs {
@@ -518,7 +518,7 @@ Finally, add the module declaration files for both pages. Copy the files `home.m
 
 You'll notice that once you go *lazy*, you'll be referencing pages as strings as opposed to actual identifiers. Ionic circumvents the default *eager loading* pattern by Angular by using some kind of magic trick they've written in the `IonicPage` decorator which is something not so important to know right now.
 
-To keep it consistent, we'll need to take out the existing references in our `src/app/app.module.ts`. Not only because of that but also because it doesn't make sense for these pages to be there as it goes against the notion that every page should be encapsulated by its own module. Go ahead and delete the unused page references in `src/app/app.module.ts`.
+We'll need to take out the existing references in our `src/app/app.module.ts` because it goes against the notion that every page should be encapsulated by its own module. Go ahead and delete the unused page references in `src/app/app.module.ts`.
 
 ```ts
 // remove page imports
