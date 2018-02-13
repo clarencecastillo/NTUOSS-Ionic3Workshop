@@ -514,7 +514,7 @@ export class HomePage {
 
 ```
 
-Finally, add the module declaration files for both pages. Go ahead and the files `home.module.ts` and `tabs.module.ts` to their respective page directories.
+Finally, add the module declaration files for both pages. Copy the files `home.module.ts` and `tabs.module.ts` to their respective page directories.
 
 You'll notice that once you go *lazy*, you'll be referencing pages as strings as opposed to actual identifiers. Ionic circumvents the default *eager loading* pattern by Angular by using some kind of magic trick they've written in the `IonicPage` decorator which is something not so important to know right now.
 
