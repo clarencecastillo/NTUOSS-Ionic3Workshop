@@ -583,7 +583,6 @@ That's exactly what our `LoadingPage` is for except that we don't really have mu
 ```ts
 ...
 // remove import of NavParams
-// add import NavController
 import { IonicPage, NavController } from 'ionic-angular';
 // add import ApiProvider
 import { ApiProvider } from "../../providers/api/api";
