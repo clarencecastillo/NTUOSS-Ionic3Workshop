@@ -17,7 +17,7 @@ export class ApiProvider {
   // List of very bad pickup lines
   // Could use external API to generate these in the future
   pickupLines: string[] = [
-    "Jingle my bless and I'll promise you a White Christmas.",
+    "Jingle my balls and I'll promise you a White Christmas.",
     "If you were a burger at McDonalds you'd be the McGorgeous.",
     "Do you like reptiles because Iguana be with you.",
     "Are you a 'tuna sub' spelt backwards because I wanna bus a nut.",
